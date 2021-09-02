@@ -3,7 +3,7 @@
 * https://introcs.cs.princeton.edu/java/24percolation/
 *
 *
-* (c) 2021 Joel Hammer, Friends School of Baltimore
+* (c) 2021 Joel Hammer, Friends School of Baltimore.
 */
 
 
