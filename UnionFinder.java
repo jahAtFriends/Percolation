@@ -1,5 +1,5 @@
 /**
-*
+* Solves Dynamic Connectivity Problem
 */
 public interface UnionFinder {
 	
