@@ -1,2 +1,7 @@
-# Percolation
-Advanced CS Percolation Lab
+# Percolation Lab
+
+## Description
+
+
+
+
