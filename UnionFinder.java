@@ -1,3 +1,6 @@
+/**
+*
+*/
 public interface UnionFinder {
 	
 	public void union(int a, int b);
