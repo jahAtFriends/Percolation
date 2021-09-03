@@ -30,7 +30,7 @@
 * ideal) implementations allow water to flow back through the bottom row after
 * percolation and into sites which otherwise would not have contained water.
 */
-public interface Percolation {
+public interface Percolator {
 	
 	/**
 	* Opens the site at the given row column in the percolation matrix.
@@ -50,7 +50,7 @@ public interface Percolation {
     * convention begin with the uppermost row being numbered "1."
     * @param col the column in which the site to be checked is located. Columns,
     * by convention, begin with the leftmost column being numbered "1."
-    * @returns {@code true} if the given site is open and {@code false} otherwise.
+    * @return {@code true} if the given site is open and {@code false} otherwise.
 	*/
 	public boolean isOpen(int row, int col);
 	
@@ -63,7 +63,7 @@ public interface Percolation {
     * convention begin with the uppermost row being numbered "1."
     * @param col the column in which the site to be checked is located. Columns,
     * by convention, begin with the leftmost column being numbered "1."
-    * @returns {@code true} if a path exists between an open top-row site and
+    * @return {@code true} if a path exists between an open top-row site and
     * the given site, {@code false} otherwise.
     */
     public boolean hasWater(int row, int col);
@@ -73,7 +73,7 @@ public interface Percolation {
     * there exists a path of open sites from an open site on the top row to an open
     * site on the bottom.
     *
-    * @returns {@code true} if the system percolates.
+    * @return {@code true} if the system percolates.
     */
     public boolean percolates();
 	
