@@ -1,5 +1,5 @@
 /*
-* Friends School adaptation of lab by Robert Sedgwick described at
+* Friends School adaptation of a lab by Robert Sedgewick described at
 * https://introcs.cs.princeton.edu/java/24percolation/
 *
 *
@@ -8,10 +8,9 @@
 
 
 /**
-* This interface describes the required methods for a percolation system designed to 
-* run a Monte Carlo simulation to determine the percolation threshold of an n x n grid.
-* It assumes a matrix of n x n sites, initially closed, but which may be sequentially
-* opened (but never closed). It considers that water flows from the top of the matrix
+* This interface describes the required methods for a percolation system made up of a
+* grid of n x n sites, all initially closed. These sites may be sequentially
+* opened (but never closed). It considers that water flows from the top of the grid
 * and detects:
 * <ol type = "1">
 * <li> Whether water flows to any given site from the top and </li>
@@ -20,30 +19,62 @@
 *
 * Water can flow from one site to the next <b> only </b> if they share a border, so
 * that water cannot pass directly between two squares joining only at the corner.
+*
+* The entire system is said to percolate if a path of open sites (that is, where water
+* can flow from one site to the next) exists from an open site on the top row to an
+* open site on the bottom row.
+*
+* An ideal implementation of this method will avoid the problem of "backwashing" or
+* "backflow." Namely, when a system percolates, a site wich has no path to the top row
+* does not fill with water even if it does have a path to the bottom row. Some (less
+* ideal) implementations allow water to flow back through the bottom row after
+* percolation and into sites which otherwise would not have contained water.
 */
 public interface Percolation {
 	
 	/**
-	* Opens the site at the given row column in the percolation matrix. Note that
-	* the uppermost row should be numbered "1" and the leftmost column also numbered
-	* "1." Additionally, it is important to note that this method is <i>not</i>
-	* {@code open(int x, int y)} where x and y represent coordinates in the plane.
-	* From this perspective, the row and column would be a reversal of the expected
-	* ordering.
+	* Opens the site at the given row column in the percolation matrix.
 	*
-	* @param row the row in which the site to be opened is located.
-	* @param col the column in which the site to be opened is located.
+	* @param row the row in which the site to be opened is located. Rows, by
+    * convention begin with the uppermost row being numbered "1."
+	* @param col the column in which the site to be opened is located.Columns,
+    * by convention, begin with the leftmost column being numbered "1."
 	*/
 	public void open(int row, int col);
 	
 	
 	/**
-	*
+	* Checks whether a given site is open.
+    *
+    * @param row the row in which the site to be checked is located. Rows, by
+    * convention begin with the uppermost row being numbered "1."
+    * @param col the column in which the site to be checked is located. Columns,
+    * by convention, begin with the leftmost column being numbered "1."
+    * @returns {@code true} if the given site is open and {@code false} otherwise.
 	*/
 	public boolean isOpen(int row, int col);
 	
-	public boolean hasWater(int row, int col);
+	/**
+    * Determines whether a given site has filled with water. In other words, this
+    * method will return {@code true} if there is a path from an open site in the top
+    * row to the given one.
+    *
+    * @param row the row in which the site to be checked is located. Rows, by
+    * convention begin with the uppermost row being numbered "1."
+    * @param col the column in which the site to be checked is located. Columns,
+    * by convention, begin with the leftmost column being numbered "1."
+    * @returns {@code true} if a path exists between an open top-row site and
+    * the given site, {@code false} otherwise.
+    */
+    public boolean hasWater(int row, int col);
 	
-	public boolean percolates();
+	/**
+    * Determines if the system percolates. By definition, a system percolates if
+    * there exists a path of open sites from an open site on the top row to an open
+    * site on the bottom.
+    *
+    * @returns {@code true} if the system percolates.
+    */
+    public boolean percolates();
 	
 }
