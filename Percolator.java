@@ -17,14 +17,14 @@
 * <li> Whether the system percolates. That is, water can flow from
 * the top through open sites to the bottom of the system </li></ol>
 *
-* Water can flow from one site to the next <b> only </b> if they share a border, so
+*<p>Water can flow from one site to the next <b> only </b> if they share a border, so
 * that water cannot pass directly between two squares joining only at the corner.
 *
-* The entire system is said to percolate if a path of open sites (that is, where water
+* <p>The entire system is said to percolate if a path of open sites (that is, where water
 * can flow from one site to the next) exists from an open site on the top row to an
 * open site on the bottom row.
 *
-* An ideal implementation of this method will avoid the problem of "backwashing" or
+* <p>An ideal implementation of this method will avoid the problem of "backwashing" or
 * "backflow." Namely, when a system percolates, a site wich has no path to the top row
 * does not fill with water even if it does have a path to the bottom row. Some (less
 * ideal) implementations allow water to flow back through the bottom row after
@@ -76,5 +76,12 @@ public interface Percolator {
     * @return {@code true} if the system percolates.
     */
     public boolean percolates();
+	
+	/**
+	* Gives the number of sites that have been opened.
+	*
+	* @return The number of sites open in the percolation system.
+	*/
+	public int numberOfOpenSites();
 	
 }
