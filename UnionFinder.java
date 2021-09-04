@@ -12,17 +12,17 @@
 * The interface assumes a graph of initially completely disconnected nodes
 * which may be successively conected.
 *
-* The pricipal purpose of such a class is to determine if any two nodes are
+* <p>The pricipal purpose of such a class is to determine if any two nodes are
 * connected either <i>directly</i> or <i>indirectly</i> through connections.
 * to intermediate nodes.
 * 
-* The method {@code union(a,b)} <i> directly </i> connects to nodes, but
+* <p>The method {@code union(a,b)} <i> directly </i> connects two nodes, but
 * any two nodes are said to be connected if a series of direct connections
 * exist. For example, if node a is connected to node b directly and node b
 * is directly connected to node c, then node a is connected to node c <i>
 * indirectly </i>.
 *
-* The {@code find(a,b)} method determines nodes a and be are connected
+* <p>The {@code find(a,b)} method determines nodes a and be are connected
 * either directly or indirectly.
 */
 public interface UnionFinder {
