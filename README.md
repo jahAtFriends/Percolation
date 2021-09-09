@@ -43,7 +43,29 @@ to be correct _theoretically_. Thus, this problem showcases the strength of
 computer programming as an empirical discipline which can make observations
 quickly and cheaply.
 
+###Monte Carlo Simulation
+
+As we said above, the problem of finding the threshold at which our system will
+percolate can presently only be solved probabilistically. We can do this rather
+easily using what is called a _Monte Carlo Simulation_. A monte carlo
+simulation relies on random values to determine an average or distribution for
+some situation.
+
+In our case, we will use this kind of simulation to create many percolation
+systems and randomly open sites until each system percolates. Then we can
+average the number of open sites it took to establish a confidence interval
+over which the 
+
 ## Assignment
+
+In the previous assignment, we created an algorithm using a tree data structure
+to solve the dynamic connectivity problem. Using your implementation of the
+Union-Find algorithm, write a class which can model the percolation system
+as described above. To help, an interface called `Percolator` has been given
+to specify the API for your class. This class should be called
+`Percolation.java`.
+
+
 
 
 
