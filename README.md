@@ -43,7 +43,7 @@ to be correct _theoretically_. Thus, this problem showcases the strength of
 computer programming as an empirical discipline which can make observations
 quickly and cheaply.
 
-###Monte Carlo Simulation
+### Monte Carlo Simulation
 
 As we said above, the problem of finding the threshold at which our system will
 percolate can presently only be solved probabilistically. We can do this rather
