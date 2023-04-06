@@ -53,17 +53,26 @@ some situation.
 
 In our case, we will use this kind of simulation to create many percolation
 systems and randomly open sites until each system percolates. Then we can
-average the number of open sites it took to establish a confidence interval
-over which the 
+average the number of open sites to estimate the fraction of sites that need to
+be opened for percolation to occur. This turns out to be a constant number, but
+there is no mathematical proof, even though we can determine it experimentally!
 
 ## Assignment
 
-In the previous assignment, we created an algorithm using a tree data structure
-to solve the dynamic connectivity problem. Using your implementation of the
-Union-Find algorithm, write a class which can model the percolation system
+In our study of dynamic connectivity, we created an algorithm using a tree data structure
+to build a union-find algorithm. For this assignment, you will use your implementation of the
+algorithm to write a class which can model the percolation system
 as described above. To help, an interface called `Percolator` has been given
 to specify the API for your class. This class should be called
-`Percolation.java`.
+`Percolation.java`. Your submission should also include the file `WeightedQuickUnion.java` containing
+your UF code.
+
+After you have correctly overriden the api for both classes, fill in the class `PercolationStats`. The
+constructor for this class will run the monte carlo simulation. Specifically, it will generate multiple
+percolation systems and randomly open sites until it percolates. It will then calculate the average
+number of sites opened in each system (as well as the standard deviation).
+
+Upload all three of these files to this repository.
 
 
 
